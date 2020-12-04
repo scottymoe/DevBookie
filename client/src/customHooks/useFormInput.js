@@ -27,13 +27,3 @@ export const useFormInput = (initialValue, name) => {
   };
 };
 
-// const email = useFormInput('', Email)
-
-// <input {...email} />
-
-// <input
-//     required,
-//     placeholder: `Enter Email`,
-//     onChange: (e) => setX(e.target.value),
-//     value: x,
-//     />

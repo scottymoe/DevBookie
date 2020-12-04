@@ -41,12 +41,9 @@ const AuthProvider = (props) => {
       // you don't know what this looks like
       setUser(res.data.data);
 
-      history.push("/");
+      history.push("/home");
     } catch (err) {
-      // redo error handling
-      // err.response.data.errors.full_messages is an array
       setAuthErrors(err.response.data.errors.full_messages);
-      // alert(err); should avoid alerts in production bad UX
     } finally {
       setAuthLoading(false);
     }
@@ -60,7 +57,7 @@ const AuthProvider = (props) => {
       let res = await axios.post("api/auth/sign_in", user);
 
       setUser(res.data.data);
-      history.push("/");
+      history.push("/home");
     } catch (err) {
       setAuthErrors(err.response.data.errors);
       // you can't be sure what this will look like
@@ -69,20 +66,6 @@ const AuthProvider = (props) => {
     }
   };
 
-  //React Hook "useAxios" is called in function "handleLoginHook" which is neither a React function component or a custom React Hook function
-
-  // const handleLoginHook = (user, history) => {
-  //   let { data, loading, error } = useAxios("api/auth/sign_in", {
-  //     method: "post",
-  //     data: user,
-  //   });
-  //   console.log(data);
-  //   console.log(loading);
-  //   console.log(error);
-
-  //   setUser(data.data);
-  //   history.push("/");
-  // };
 
   const handleLogout = async (history) => {
     try {
@@ -105,7 +88,6 @@ const AuthProvider = (props) => {
         handleRegister,
         handleLogout,
         handleLogin,
-        tacos: "awesome",
       }}
     >
       {/* nested stuff going here */}
