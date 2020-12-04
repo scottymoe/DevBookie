@@ -1,4 +1,4 @@
-# Starter Proj
+# Dev Bookie
 
 ## Steps to setup and run
 
